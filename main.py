@@ -26,9 +26,15 @@ def check_win(player, computer):
         else: 
             return ("rock smaches paper you lose")
         
-choices = get_choices()
-result = check_win(choices["player"], choices["computer"])
-print(result)
+choose_no_of_time_to_play = int(input("how many time do you want to play"))
+number_of_time_played = choose_no_of_time_to_play 
+i = 0
+while i < number_of_time_played:
+    choices = get_choices()
+    result = check_win(choices["player"], choices["computer"])
+    print(result)
+    i += 1
+
     
     
 
