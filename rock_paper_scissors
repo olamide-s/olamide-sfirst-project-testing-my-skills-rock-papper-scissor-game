@@ -82,6 +82,8 @@ def play_game():
    else:
       print("rerun game wrong answer")
 
-for playtime in range(0, play_times):
+for playtime in range(1, play_times +1):
    play_game()
+   time_remaining = play_times-playtime
+   print(f"your playtime remain: {time_remaining}")
 
