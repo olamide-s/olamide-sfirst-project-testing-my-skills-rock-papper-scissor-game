@@ -32,7 +32,7 @@ scissors = '''
 play_times = int(input("How many time do you want play? "))
 
 
-def check_win():
+def play_game():
    #user choice saved to a variable ad user chioce 
    user_choice = int(input("0 for rock, 1 for paper, and 2 for scissors "))
 
@@ -83,5 +83,5 @@ def check_win():
       print("rerun game wrong answer")
 
 for playtime in range(0, play_times):
-   check_win()
+   play_game()
 
