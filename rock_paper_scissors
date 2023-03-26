@@ -27,33 +27,61 @@ scissors = '''
 '''
 
 #Write your code below this line 👇
-user_choice = int(input("0 for rock, 1 for paper, and 2 for scissors "))
 
-option = [rock, paper, scissors]
+#creating a variable and saving it to the amount of time user inputed 
+play_times = int(input("How many time do you want play? "))
 
-computer_choice = random.randint(0,2)
-print(computer_choice)
 
-if user_choice == computer_choice :
-    print(f"you choose{option[user_choice]} computer choose {option[computer_choice]} it a tie ")
+def check_win():
+   #user choice saved to a variable ad user chioce 
+   user_choice = int(input("0 for rock, 1 for paper, and 2 for scissors "))
 
-elif user_choice == 0:
-   if computer_choice == 2:
-      print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you won")
+   #the option in the game 
+   option = [rock, paper, scissors]
+
+   #computer generate it choice by randomly choosing from 0 to 2 
+   computer_choice = random.randint(0,2)
+   #checks if computer choice and user choice are the same if yes it print user choice and computer choose with the designs up
+   if user_choice == computer_choice :
+      print(f"you choose{option[user_choice]} computer choose {option[computer_choice]} it a tie ")
+
+   #checks if user choice is = rock
+   elif user_choice == 0:
+
+      #check if computer choice == scisssors and print them
+      if computer_choice == 2:
+         print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you won")
+
+      #if no it goes to the else statement
+      else:
+         print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you lose")
+
+   #checks if user choice is = paper
+   elif user_choice == 1:
+
+      #check if computer choice == rock and print them
+      if computer_choice == 0:
+         print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you won")
+
+      #if no it goes to the else statement
+      else:
+         print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you lose")
+
+   #checks if user choice is = scissors
+   elif user_choice == 2:
+
+      #check if computer choice == paper and print them
+      if computer_choice == 1:
+         print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you won")
+
+      #if no it goes to the else statement
+      else:
+         print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you lose")
+
+   #if the user input wrong input 
    else:
-      print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you lose")
+      print("rerun game wrong answer")
 
-elif user_choice == 1:
-   if computer_choice == 0:
-      print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you won")
-   else:
-      print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you lose")
+for playtime in range(0, play_times):
+   check_win()
 
-elif user_choice == 2:
-   if computer_choice == 1:
-      print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you won")
-   else:
-      print(f"you choose {option[user_choice]} computer choose {option[computer_choice]} you lose")
-
-else:
-  print("rerun game wrong answer")
